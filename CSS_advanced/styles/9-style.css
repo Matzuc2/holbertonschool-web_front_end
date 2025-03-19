@@ -30,8 +30,7 @@ body {
     font-weight: var(--font-weight-regular);
 }
 a {
-    font-style: unset;
-    color:var(--text-color);
+    text-decoration:none;
 }
 .visually-hidden {
     display: none;
