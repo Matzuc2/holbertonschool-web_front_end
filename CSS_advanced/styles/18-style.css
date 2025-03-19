@@ -37,9 +37,6 @@
     --nav-item-display: inline-block;
     --nav-item-margin: 0 0 3rem 0;
     --nav-item-link-hover: var(--color-primary);
-
-
-
 }
 *, *:before, *:after {
     box-sizing: border-box;
@@ -115,6 +112,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav{
     margin: 0;
     padding: 0;
+    all:none;
     text-align: center;
 }
 .nav .nav-item{
