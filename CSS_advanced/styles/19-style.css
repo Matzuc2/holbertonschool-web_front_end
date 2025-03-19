@@ -154,7 +154,7 @@ ul.row{
 
 }
 .footer ul{
-    float: right;
+    text-align: right;
 }
 .footer{
     padding: var(--footer-padding);
