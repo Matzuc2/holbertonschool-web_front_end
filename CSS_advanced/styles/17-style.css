@@ -71,7 +71,7 @@ a:active{
     padding-bottom: var(--section-padding);
 }
 .section-header{
-    text-align: var(--section-header-align);
+    text-align: var(--section-header-padding);
     padding-left: var(--section-header-padding);
     padding-right: var(--section-header-padding);
     padding-top: var(--section-header-padding);
