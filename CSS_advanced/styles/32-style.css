@@ -243,6 +243,7 @@ ul.row{
     left: -0.1rem;
     right: -0.1rem;
     z-index: 1;
+    transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 .card-work:hover .card-inner{
     background-color: rgba(0, 0, 0, 0.7);
@@ -289,28 +290,6 @@ ul.row{
     transition: color var(--transition-duration), background-color var(--transition-duration);
 }
 
-.card-work .card-inner {
-    transition: var(--transition-duration) var(--transition-cubic-bezier);
-}
-.card-testimonial .card-quote{
-    position: relative;
-}
-.button{
-    display: var(--button-display);
-    padding: var(--button-padding);
-    border: var(--button-border);
-    font-size: var(--button-font-size);
-    color: var(--button-color);
-    text-decoration: var(--button-text-decoration);
-}
-.button:hover{
-    color: var(--button-hover-color);
-    text-decoration: var(--button-hover-text-decoration);
-    background-color: var(--button-hover-background);
-}
-[data-section-theme="dark"]{
-    --button-color: var(--color-white);
-}
 .card-testimonial{
     text-align: center;
 }
