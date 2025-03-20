@@ -269,7 +269,7 @@ ul.row{
     opacity: 1;
 }
 .card-testimonial .card-quote{
-    position: inherit;
+    position: relative;
 }
 .button{
     display: var(--button-display);
