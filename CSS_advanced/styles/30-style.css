@@ -259,7 +259,10 @@ ul.row{
 }
 .card-title a::after, .card-work a::after{
     position: absolute;
-    padding: 0 0 0 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
     content: "";
 }
 .card-work:hover .card-title{
