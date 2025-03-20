@@ -256,6 +256,7 @@ ul.row{
     display: block;
     text-decoration: none;
     padding-top: 45%;
+    position: relative;
 }
 .card-title a::after, .card-work a::after{
     position: absolute;
