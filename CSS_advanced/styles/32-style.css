@@ -289,10 +289,6 @@ ul.row{
     transition: color var(--transition-duration), background-color var(--transition-duration);
 }
 
-.card-work:hover .card-image {
-    transition: var(--transition-duration) var(--transition-cubic-bezier);
-}
-
 .card-work .card-inner {
     transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
