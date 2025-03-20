@@ -302,7 +302,7 @@ ul.row{
 }
 .card-testimonial .card-quote::before{
     content: \201C;
-    position: inherit;
+    position: relative;
     top: -4.5rem;
     left: -1rem;
     color:#efeded;
