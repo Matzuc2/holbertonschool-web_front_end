@@ -71,8 +71,7 @@ html {
     display: var(--header-logo-link-display);
     position: var(--header-logo-link-position);
     vertical-align: var(--header-logo-link-top);
-    display: flex;
-    justify-content: var(--header-logo-link-left);
+    margin: var(--header-logo-link-left);
 }
 body {
     line-height: var(--line-height-base);
