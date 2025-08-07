@@ -1,0 +1,10 @@
+/*apply css to all body tags, h1 tags inside them, and class .smaller inside h1 tags*/
+body{
+    font-size: 14px;
+    h1{
+        font-size: 16px;
+        .smaller{
+            font-size: 12px;
+        }
+    }
+}
