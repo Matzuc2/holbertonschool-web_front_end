@@ -1,0 +1,8 @@
+/*import a list and loop on each element*/
+@use "11-photos" as photos;
+
+@each $variable in photos.$list-names {
+    .photo-#{$variable}{
+        background: image-url("photos/#{$variable}.jpg") no-repeat; 
+    }
+}
