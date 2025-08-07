@@ -1,0 +1,7 @@
+/*add element to the first element nested to body with class red*/
+body{
+    color: #3D3D3D;
+    > .red{
+        color: #FF0000;
+    }
+}
