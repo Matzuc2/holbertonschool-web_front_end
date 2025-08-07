@@ -1,5 +1,7 @@
 /* assign a color to body by variable */
 $myvar: #3D3D3D;
-body, p {
-    color: $myvar; 
-}
+body{
+    color: $myvar; }
+
+p{
+    color: $myvar; }
