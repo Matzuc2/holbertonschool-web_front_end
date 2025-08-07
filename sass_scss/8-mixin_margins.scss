@@ -1,12 +1,15 @@
 /*adding margin to div with a mixin*/
-@mixin margin{
+@mixin div1{
     margin-left: 15px;
     margin-right: 15px;
 }
-body{
+@mixin body1{
     margin-left: 10px;
     margin-right: 10px;
 }
+body{
+   @include body1; 
+}
 div{
-    @include margin;
+    @include div1;
 }
