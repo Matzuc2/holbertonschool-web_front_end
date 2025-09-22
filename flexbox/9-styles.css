@@ -384,7 +384,7 @@
   /* Section ABOUT US
       ============================= */
     .section-about-us [attribute^="col-"]{
-        align-self: flex-end;
+        align-self: center;
     }
       
     
