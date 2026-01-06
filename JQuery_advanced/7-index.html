@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Task 4</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous">
+    </script>
+    </head>
+    <body>
+    <script type="application/javascript">
+            $(document).ready(function () {
+               createSearchForm();
+               if ($.ajax){
+                console.log("ajax methods available")
+               }
+            })
+            function createSearchForm(){
+                $("body")
+                    .append($("<input type='text'></input>"))
+                    .append($("<input type='submit' value='Submit'></input>").click(function(){
+                        queryWikipedia($("input").val())
+                    }))
+                    .append("<ul></ul>")
+            }
+            function addNewArticle(id, title, snippet){
+                let li = $("<li></li>")
+                    .append($("<p></p>")
+                        .append($("<span></span>").text(`${id} - `), $("<b></b>").text(`${title}`) )
+                    )
+                    .append($("<p></p>").html(snippet))
+                $("ul").append(li)
+            }
+
+            function queryWikipedia(search){
+                $.ajax({
+                    url: "https://en.wikipedia.org/w/api.php",
+                    data: {
+                        action: "query",
+                        list: "search",
+                        srsearch: search,
+                        format: "json"
+                    },
+                    dataType: "jsonp",
+                    success: function(response) {
+                        response.query.search.forEach(function(result) {
+                            addNewArticle(result.pageid, result.title, result.snippet);
+                        });
+                    }
+                });
+            }
+    </script>
+    </body>
+</html>

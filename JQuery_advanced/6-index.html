@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Task 4</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous">
+    </script>
+    </head>
+    <body>
+    <script type="application/javascript">
+            $(document).ready(function () {
+            createFamilyTree();
+            createForm()
+        })
+        function createFamilyTree(){
+            $("body")
+                .append($("<table></table>")
+                    .append($("<thead></thead>")
+                        .append($("<tr></tr>")
+                            .append($("<th></th>").text("Firstname"), $("<th></th>").text("Lastname"))))
+                    .append($("<tbody></tbody>"))
+                    )
+        }
+        function addNewMember(firstName, lastName, position) {
+            if(position === "before"){
+                $("body").find("tbody").prepend($(`<tr></tr>`)
+                    .append($("<td></td>").text(`${firstName}`), $("<td></td>").text(`${lastName}`), $("<td></td>").text("(x)").click(function() {
+                        $(this).closest("tr").remove();
+                    }).css("background-color", "orange")))
+            }
+            else{
+                    $("body").find("tbody").append($(`<tr></tr>`)
+                    .append($("<td></td>").text(`${firstName}`), $("<td></td>").text(`${lastName}`), $("<td></td>").text("(x)").click(function() {
+                        $(this).closest("tr").remove();
+                    }).css("background-color", "orange")))
+            }
+        }
+        function createForm(){
+            $("table").before(
+                    $("<input type='text'></input>").css({
+                        "border": "1px solid grey"
+                    }),
+                    $("<input type='text'></input>").css({
+                        "border": "1px solid grey"
+                    }),
+                    $("<select><option value='before'>Before</option><option value='after'>After</option></select>").css("border-radius", "5px"  
+                    ),
+                    $("<input type='submit' value='Submit'></input>").click( function (){
+                        addNewMember($("input").first().val(), $("input:nth-of-type(2)").val(), $("select").val())
+                    }).css({
+                        "border-radius": "5px",
+                        "border": "1px solid grey",
+                        "background-color": "white"
+                    })
+                )
+        }
+    </script>
+    </body>
+</html>
