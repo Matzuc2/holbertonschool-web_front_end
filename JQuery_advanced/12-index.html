@@ -19,7 +19,7 @@
 
             function addPostRow(data){
                 $("body")
-                    .append($(`<p id='row-${data.id}''></p>`)
+                    .append($(`<p id='row-${data.id}'></p>`)
                         .append($("<span></span>").text(`Post created with id ${data.id}, title: ${data.title}, author: ${data.author}`))
                         .prepend($("<span></span>").text("(delete)").click(function(){
                             deletePost(data.id)
@@ -27,7 +27,16 @@
             }
 
             function deletePost(id){
-                $(`#row-${id}`).remove()
+                $.ajax({
+                    url: `http://localhost:3000/posts/${id}`,
+                    type: 'DELETE'
+                })
+                .done(function() {
+                    $(`#row-${id}`).remove();
+                })
+                .fail(function() {
+                    alert("Post was not deleted");
+                });
             }
 
             function listPosts(){
