@@ -12,33 +12,33 @@
     </head>
     <body>
     <script type="application/javascript">
-            $(document).ready(function () {
+            jQuery(document).ready(function () {
                createSearchForm();
-               if ($.ajax){
+               if (jQuery.ajax){
                 console.log("ajax methods available")
                }
             })
             function createSearchForm(){
-                $("body")
-                    .append($("<input type='text'></input>"))
-                    .append($("<input type='submit' value='Submit'></input>").click(function(){
-                        queryWikipedia($("input").val())
+                jQuery("body")
+                    .append(jQuery("<input type='text'></input>"))
+                    .append(jQuery("<input type='submit' value='Submit'></input>").click(function(){
+                        queryWikipedia(jQuery("input").val())
                     }))
                     .append("<ul></ul>")
-                    .append($("<ul id='pagination'></ul>"))
+                    .append(jQuery("<ul id='pagination'></ul>"))
             }
 
             function addNewArticle(id, title, snippet){
-                let li = $("<li></li>")
-                    .append($("<p></p>")
-                        .append($("<span></span>").text(`${id} - `), $("<b></b>").text(`${title}`) )
+                let li = jQuery("<li></li>")
+                    .append(jQuery("<p></p>")
+                        .append(jQuery("<span></span>").text(`${id} - `), jQuery("<b></b>").text(`${title}`) )
                     )
-                    .append($("<p></p>").html(snippet))
-                $("ul").first().append(li)
+                    .append(jQuery("<p></p>").html(snippet))
+                jQuery("ul").first().append(li)
             }
 
             function queryWikipedia(search, number=0){
-                $.ajax({
+                jQuery.ajax({
                     url: "https://en.wikipedia.org/w/api.php",
                     data: {
                         action: "query",
@@ -49,7 +49,7 @@
                     },
                     dataType: "jsonp",
                     success: function(response) {
-                        $("ul").first().empty()
+                        jQuery("ul").first().empty()
                         response.query.search.forEach(function(result) {
                             addNewArticle(result.pageid, result.title, result.snippet);
                         });
@@ -59,11 +59,11 @@
             }
 
             function buildPagination(numberOfItems, itemsPerPage, currentOffset){
-                $("#pagination").empty()
+                jQuery("#pagination").empty()
                 for(let i= 0; i < numberOfItems / itemsPerPage; i++){
                     let fontWeight = (i * itemsPerPage === currentOffset) ? "bold" : "normal";
-                    $("#pagination").append(
-                        $(`<li></li>`)
+                    jQuery("#pagination").append(
+                        jQuery(`<li></li>`)
                             .text(i + 1)
                             .css({
                                 "cursor": 'pointer', 
@@ -72,9 +72,9 @@
                                 "font-weight": fontWeight
                             })
                             .click(function (){
-                                $("#pagination li").css("font-weight", "normal");
-                                $(this).css("font-weight", "bold");
-                                queryWikipedia($("input").val(), i)
+                                jQuery("#pagination li").css("font-weight", "normal");
+                                jQuery(this).css("font-weight", "bold");
+                                queryWikipedia(jQuery("input").val(), i)
                             })
                         )
                 }
